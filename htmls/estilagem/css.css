@@ -1,0 +1,28 @@
+header {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px;
+}
+
+header nav ul li a span:first-child {
+    font-size: 24px;
+    margin-bottom: 5px;
+}

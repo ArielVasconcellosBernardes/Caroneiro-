@@ -1,98 +1,162 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Companions</title>
+    <title>Travel Companions - Encontre Companheiros de Viagem</title>
     <link rel="stylesheet" href="estilagem/css.css">
 </head>
-
 <body>
+    <!-- Header -->
     <header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>Passagens</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>Chat</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="url(#gradient)"/>
+                    <circle cx="35" cy="40" r="4" fill="white"/>
+                    <rect x="31" y="44" width="8" height="12" rx="4" fill="white"/>
+                    <circle cx="50" cy="35" r="4" fill="white"/>
+                    <rect x="46" y="39" width="8" height="15" rx="4" fill="white"/>
+                    <circle cx="65" cy="40" r="4" fill="white"/>
+                    <rect x="61" y="44" width="8" height="12" rx="4" fill="white"/>
+                    <path d="M20 70 L80 70" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M25 65 L75 65" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#34c759"/>
+                            <stop offset="100%" stop-color="#2d8a56"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="logo-text">Caroneiro</div>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="perfil.html"><span>👤</span><span>Perfíl</span></a></li>
+                    <li><a href="#"><span>✈️</span><span>Passagens</span></a></li>
+                    <li><a href="#"><span>💬</span><span>Chat</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="header-buttons">
+                <a href="#" class="btn-login">Login</a>
+                <a href="#" class="btn-cadastro">Cadastrar</a>
+            </div>
+        </div>
     </header>
-    <hr>
-    <main>
-        <div class="conteiner">
-            <section class="imagens">
-                <img src="https://viajoteca.com/wp-content/uploads/2020/01/sakura-em-paris.jpg" alt="Imagem 1">
-                <img src="https://uploads.dicasdaitalia.com.br/sites/11/2015/09/coliseu-roma-italia-1.jpg" alt="Imagem 2">
-                <img src="https://cdn.vaidepromo.com.br/blog/2024/09/Cristo-Redentor-Rio-de-Janeiro-min-1024x682.jpg" alt="Imagem 3">
-                <img src="https://uploads.dicasdaitalia.com.br/sites/11/2019/11/torre-de-pisa-1.jpg" alt="Imagem 4">
-                <img src="https://www.universal-assistance.com/br-blog/wp-content/uploads/2022/09/pontos-turisticos-de-londres-blog-ua-br.jpg" alt="Imagem 5">
-                <img src="https://www.portocidadaniaportuguesa.com.br/assets/userfiles/archives/60c0c3ee13c39.jpg" alt="Imagem 6">
-            </section>
-        </div>
-        <div class="conteiner-perfil">
-            <div class="perfil">
-                <p>Nome da Pessoa</p>
-                <p>Cidade</p>
-                <img src="https://images.unsplash.com/photo-1632967088381-57609365b51d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
-                    alt="Foto da pessoa">
-            </div>
 
-            <div class="perfil">
-                <p>Nome da Pessoa</p>
-                <p>Cidade</p>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1jxa70X8p-yOhLPUJaR6F_wyVgjO6y_yahQ&s" alt="Foto da pessoa">
+    <!-- Banner Principal -->
+    <section class="banner-principal">
+        <div class="banner-content">
+            <h1>Viaje com Companhia, Explore com Confiança</h1>
+            <p>Conecte-se com viajantes incríveis e crie memórias inesquecíveis juntos</p>
+            
+            <!-- Campo de Busca -->
+            <div class="search-container">
+                <input type="text" placeholder="Buscar destinos ou viajantes...">
+                <button type="submit">🔍</button>
             </div>
         </div>
-        <div class="conteiner-perfil">
-        <div class="perfil">
-                <p>Nome da Pessoa</p>
-                <p>Cidade</p>
-                <img src="https://i.pinimg.com/736x/74/86/d1/7486d118afefd9aea487c67487d8b2c6.jpg" alt="Foto da pessoa">
-            </div>
+    </section>
 
-            <div class="perfil">
-                <p>Nome da Pessoa</p>
-                <p>Cidade</p>
-                <img src="https://f.i.uol.com.br/fotografia/2020/11/18/16057002115fb50a73d8e69_1605700211_1x1_md.jpg" alt="Foto da pessoa">
+    <!-- Destinos em Destaque -->
+    <section class="destinos-destaque">
+        <h2>Destinos em Destaque</h2>
+        <div class="container">
+            <div class="destinos-grid">
+                <div class="destino-card">
+                    <img src="https://cdn.vaidepromo.com.br/blog/2024/09/Cristo-Redentor-Rio-de-Janeiro-min-1024x682.jpg" alt="Rio de Janeiro">
+                    <h3>Rio de Janeiro</h3>
+                    <p>15 viajantes disponíveis</p>
+                </div>
+                <div class="destino-card">
+                    <img src="https://media.staticontent.com/media/pictures/09f6c604-fa70-401a-9257-89fcf38e07fb" alt="São Paulo">
+                    <h3>São Paulo</h3>
+                    <p>22 viajantes disponíveis</p>
+                </div>
+                <div class="destino-card">
+                    <img src="https://cdn.jacadatravel.com/wp-content/uploads/2019/05/Florianopolis-AdobeStock_603394379-scaled.jpg" alt="Florianópolis">
+                    <h3>Florianópolis</h3>
+                    <p>12 viajantes disponíveis</p>
+                </div>
+                <div class="destino-card">
+                    <img src="https://www.farejaviagens.com.br/wp-content/uploads/2024/10/Salvador-Submarino-Viagens.jpg" alt="Salvador">
+                    <h3>Salvador</h3>
+                    <p>18 viajantes disponíveis</p>
+                </div>
             </div>
-            </div>
+        </div>
+    </section>
 
-        <section class="sobre-nos">
-            <h2>Como iniciar</h2>
-            <div class="como-funciona">
-                <h3>Como criar um perfil</h3>
-                <p>Cadastre-se e conte sobre suas preferências de viagem</p>
+    <!-- Viagens Populares -->
+    <section class="viagens-populares">
+        <div class="container">
+            <h2>Viagens Populares</h2>
+            <div class="conteiner">
+                <section class="imagens">
+                    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/11/7b/03/80.jpg" alt="Imagem 1">
+                    <img src="https://www.portocidadaniaportuguesa.com.br/assets/userfiles/archives/60c0c3ee13c39.jpg" alt="Imagem 2">
+                    <img src="https://oficinadeinverno.com.br/cdn/shop/articles/oficina-de-inverno-pontos-turisticos-da-italia-coliseu-capa.jpg?v=1660067717" alt="Imagem 3">
+                    <img src="https://cdn.vaidepromo.com.br/blog/2024/09/Cristo-Redentor-Rio-de-Janeiro-min-1024x682.jpg" alt="Imagem 4">
+                    <img src="https://uploads.dicasdaitalia.com.br/sites/11/2019/11/torre-de-pisa-1.jpg" alt="Imagem 5">
+                    <img src="https://www.penaestrada.blog.br/wp-content/uploads/2022/10/pontos-turisticos-do-egito-09-1.jpg" alt="Imagem 6">
+                </section>
             </div>
-            <hr>
-            <div class="como-funciona">
-                <h3>Como encontrar companheiros para as viagens</h3>
-                <p>Busque viajantes com destinos e interesses em comum</p>
+        </div>
+    </section>
+<h2>Viajantes Disponíveis</h2>
+    <!-- Perfis de Viajantes -->
+    <section class="viajantes-section">
+        <div class="container">
+            <h2
+            <div class="conteiner-perfil">
+                <div class="perfil">
+                    <p>Ana Silva</p>
+                    <p>São Paulo</p>
+                    <img src="https://static1.purepeople.com.br/articles/9/21/73/19/@/2492864--tao-doce-tao-maravilhosa-a-mulher-mai-580x0-1.jpg" alt="Foto da pessoa">
+                </div>
+                <div class="perfil">
+                    <p>Carlos Santos</p>
+                    <p>Rio de Janeiro</p>
+                    <img src="https://gente.globo.com/wp-content/uploads/2025/03/4877.png" alt="Foto da pessoa">
+                </div>
+                <div class="perfil">
+                    <p>Marina Oliveira</p>
+                    <p>Florianópolis</p>
+                    <img src="https://midias.jornalcruzeiro.com.br/wp-content/uploads/2020/03/O-que-é-ser-mulher-hoje-0.jpg" alt="Foto da pessoa">
+                </div>
+                <div class="perfil">
+                    <p>João Pereira</p>
+                    <p>Salvador</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaquNCPHo40xSgj2l5QfnJ4BKVQ7A173AEHQ&s" alt="Foto da pessoa">
+                </div>
             </div>
-            <hr>
-            <div class="como-funciona">
-                <h3>Como viajar juntos</h3>
-                <p>Conecte-se, planeje e embarque em novas aventuras</p>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Como Funciona -->
+    <section class="sobre-nos">
+        <h2>Como Funciona</h2>
+        <div class="como-funciona">
+            <div>
+                <h3>1. Criar Perfil</h3>
+                <p>Cadastre-se e crie seu perfil personalizado com seus interesses e destinos desejados</p>
+            </div>
+            <div>
+                <h3>2. Encontrar Companheiros</h3>
+                <p>Busque e conecte-se com viajantes que compartilham seus interesses e destinos</p>
+            </div>
+            <div>
+                <h3>3. Viajar Juntos</h3>
+                <p>Planeje sua viagem em conjunto e crie experiências memoráveis</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>© 2025 Caroneiro. Todos os direitos reservados.</p>
     </footer>
-
 </body>
-
 </html>

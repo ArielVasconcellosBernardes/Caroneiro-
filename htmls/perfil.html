@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Viajante - Caroneiro</title>
+    <link rel="stylesheet" href="estilagem/perfil.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="url(#gradient)"/>
+                    <circle cx="35" cy="40" r="4" fill="white"/>
+                    <rect x="31" y="44" width="8" height="12" rx="4" fill="white"/>
+                    <circle cx="50" cy="35" r="4" fill="white"/>
+                    <rect x="46" y="39" width="8" height="15" rx="4" fill="white"/>
+                    <circle cx="65" cy="40" r="4" fill="white"/>
+                    <rect x="61" y="44" width="8" height="12" rx="4" fill="white"/>
+                    <path d="M20 70 L80 70" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M25 65 L75 65" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#34c759"/>
+                            <stop offset="100%" stop-color="#2d8a56"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="logo-text">Caroneiro</div>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html"><span>🏠</span><span>Home</span></a></li>
+                    <li><a href="#"><span>✈️</span><span>Passagens</span></a></li>
+                    <li><a href="#"><span>💬</span><span>Chat</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="header-buttons">
+                <a href="#" class="btn-login">Login</a>
+                <a href="#" class="btn-cadastro">Cadastrar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal do Perfil -->
+    <main class="perfil-main">
+        <div class="container">
+            <!-- Cabeçalho do Perfil -->
+            <section class="perfil-header">
+                <div class="perfil-foto">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="Foto de Maria Silva">
+                </div>
+                <div class="perfil-info">
+                    <h1>Maria Silva</h1>
+                    <p class="perfil-localizacao">📍 São Paulo, Brasil</p>
+                    <div class="perfil-stats">
+                        <div class="stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Viagens</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Amigos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4.9</span>
+                            <span class="stat-label">Avaliação</span>
+                        </div>
+                    </div>
+                    <div class="perfil-actions">
+                        <button class="btn btn-primary">
+                            <span>➕</span>
+                            Adicionar como amigo
+                        </button>
+                        <button class="btn btn-secondary">
+                            <span>💬</span>
+                            Enviar mensagem
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Biografia -->
+            <section class="perfil-bio">
+                <h2>Sobre Mim</h2>
+                <div class="bio-content">
+                    <p>Olá! Sou uma viajante apaixonada por explorar novas culturas e fazer amigos ao redor do mundo. Adoro aventuras na natureza, culinária local e fotografar paisagens incríveis.</p>
+                    
+                    <div class="preferencias">
+                        <h3>Preferências de Viagem</h3>
+                        <div class="tags">
+                            <span class="tag">🏞️ Natureza</span>
+                            <span class="tag">🏛️ Cultura</span>
+                            <span class="tag">🍳 Culinária</span>
+                            <span class="tag">📸 Fotografia</span>
+                            <span class="tag">🚶‍♀️ Caminhadas</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Viagens Passadas -->
+            <section class="viagens-section">
+                <h2>Viagens Realizadas</h2>
+                <div class="viagens-grid">
+                    <div class="viagem-card">
+                        <img src="https://imgmd.net/images/v1/guia/1698673/rio-de-janeiro-4-c.jpg" alt="Rio de Janeiro">
+                        <div class="viagem-info">
+                            <h3>Rio de Janeiro</h3>
+                            <p class="viagem-data">Março 2024</p>
+                            <p class="viagem-desc">5 dias explorando as praias e montanhas</p>
+                        </div>
+                    </div>
+                    <div class="viagem-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Morro_da_Cruz%2C_Florianópolis_-_SC%2C_Brazil_-_panoramio_%28cropped%29.jpg" alt="Florianópolis">
+                        <div class="viagem-info">
+                            <h3>Florianópolis</h3>
+                            <p class="viagem-data">Janeiro 2024</p>
+                            <p class="viagem-desc">1 semana nas praias da ilha</p>
+                        </div>
+                    </div>
+                    <div class="viagem-card">
+                        <img src="https://www.maladeaventuras.com/wp-content/uploads/2020/05/vista-aerea-salvador-2.jpg" alt="Salvador">
+                        <div class="viagem-info">
+                            <h3>Salvador</h3>
+                            <p class="viagem-data">Novembro 2023</p>
+                            <p class="viagem-desc">4 dias de cultura e história</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Destinos Desejados -->
+            <section class="desejos-section">
+                <h2>Destinos Desejados</h2>
+                <div class="desejos-grid">
+                    <div class="desejo-card">
+                        <img src="https://static.planetaexo.com/trips/wp-content/uploads/2023/08/Poco-Azul-Chapada-Diamantina-flaviamouraleite.jpg" alt="Chapada Diamantina">
+                        <div class="desejo-info">
+                            <h3>Chapada Diamantina</h3>
+                            <p>Próxima viagem planejada</p>
+                            <button class="btn btn-outline">Juntar-se</button>
+                        </div>
+                    </div>
+                    <div class="desejo-card">
+                        <img src="https://imgmd.net/image/upload/v1/guia/2471568.jpg" alt="Fernando de Noronha">
+                        <div class="desejo-info">
+                            <h3>Fernando de Noronha</h3>
+                            <p>Sonho de viagem</p>
+                            <button class="btn btn-outline">Juntar-se</button>
+                        </div>
+                    </div>
+                    <div class="desejo-card">
+                        <img src="https://roteirobonitoms.com.br/wp-content/uploads/2022/06/gruta-do-lago-azul-5.jpg" alt="Bonito">
+                        <div class="desejo-info">
+                            <h3>Bonito - MS</h3>
+                            <p>Ecoturismo e aventura</p>
+                            <button class="btn btn-outline">Juntar-se</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Direitos reservados por "Caroneiro"</p>
+    </footer>
+</body>
+</html>

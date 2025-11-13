@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Caroneiro</title>
+    <link rel="stylesheet" href="estilagem/chat.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="url(#gradient)"/>
+                    <circle cx="35" cy="40" r="4" fill="white"/>
+                    <rect x="31" y="44" width="8" height="12" rx="4" fill="white"/>
+                    <circle cx="50" cy="35" r="4" fill="white"/>
+                    <rect x="46" y="39" width="8" height="15" rx="4" fill="white"/>
+                    <circle cx="65" cy="40" r="4" fill="white"/>
+                    <rect x="61" y="44" width="8" height="12" rx="4" fill="white"/>
+                    <path d="M20 70 L80 70" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M25 65 L75 65" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#34c759"/>
+                            <stop offset="100%" stop-color="#2d8a56"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="logo-text">Caroneiro</div>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="perfil.html"><span>👤</span><span>Perfíl</span></a></li>
+                    <li><a href="#"><span>✈️</span><span>Passagens</span></a></li>
+                    <li><a href="chat.html" class="active"><span>💬</span><span>Chat</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="header-buttons">
+                <a href="#" class="btn-login">Login</a>
+                <a href="#" class="btn-cadastro">Cadastrar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal do Chat -->
+    <main class="chat-main">
+        <div class="chat-container">
+            <!-- Lista de Conversas -->
+            <aside class="conversas-sidebar">
+                <div class="sidebar-header">
+                    <h2>Conversas</h2>
+                    <button class="btn-nova-conversa" id="novaConversa">+ Nova</button>
+                </div>
+                
+                <div class="conversas-list">
+                    <div class="conversa-item active" data-conversa="1">
+                        <div class="conversa-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&q=80" alt="Maria">
+                        </div>
+                        <div class="conversa-info">
+                            <div class="conversa-header">
+                                <h3>Maria Silva</h3>
+                                <span class="conversa-time">10:30</span>
+                            </div>
+                            <p class="conversa-preview">Olá! Vamos combinar os detalhes da viagem?</p>
+                        </div>
+                    </div>
+
+                    <div class="conversa-item" data-conversa="2">
+                        <div class="conversa-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&q=80" alt="João">
+                        </div>
+                        <div class="conversa-info">
+                            <div class="conversa-header">
+                                <h3>João Santos</h3>
+                                <span class="conversa-time">Ontem</span>
+                            </div>
+                            <p class="conversa-preview">Encontrei uma promoção ótima!</p>
+                        </div>
+                    </div>
+
+                    <div class="conversa-item" data-conversa="3">
+                        <div class="conversa-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&q=80" alt="Ana">
+                        </div>
+                        <div class="conversa-info">
+                            <div class="conversa-header">
+                                <h3>Ana Oliveira</h3>
+                                <span class="conversa-time">Seg</span>
+                            </div>
+                            <p class="conversa-preview">Confirmado! Nos vemos no aeroporto</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Área do Chat Ativo -->
+            <section class="chat-area">
+                <div class="chat-header">
+                    <div class="chat-user-info">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&q=80" alt="Maria">
+                        </div>
+                        <div class="user-details">
+                            <h3>Maria Silva</h3>
+                            <span class="user-status">Online</span>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="btn-action" title="Chamada de vídeo">📹</button>
+                        <button class="btn-action" title="Informações">ℹ️</button>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Mensagens serão inseridas aqui via JavaScript -->
+                </div>
+
+                <div class="chat-input-area">
+                    <div class="input-actions">
+                        <button class="btn-attach" title="Anexar arquivo">📎</button>
+                        <button class="btn-emoji" title="Emojis">😊</button>
+                        <button class="btn-location" title="Compartilhar localização">📍</button>
+                    </div>
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem...">
+                    <button class="btn-send" id="btnSend">➤</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Caroneiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="codagem/chat.js"></script>
+</body>
+</html>

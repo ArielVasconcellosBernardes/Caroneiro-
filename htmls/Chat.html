@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="estilagem/chat.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
@@ -30,11 +29,9 @@
                 </svg>
                 <div class="logo-text">Caroneiro</div>
             </a>
-
             <nav>
                 <ul>
-                    <li><a href="perfil.html"><span>👤</span><span>Perfíl</span></a></li>
-                    <li><a href="#"><span>✈️</span><span>Passagens</span></a></li>
+                    <li><a href="perfil.html"><span>👤</span><span>Perfil</span></a></li>
                     <li><a href="chat.html"><span>💬</span><span>Chat</span></a></li>
                     <li><a href="Sobre-nos.html"><span>ℹ️</span><span>Sobre</span></a></li>
                 </ul>
@@ -44,97 +41,19 @@
                 <a href="login.html" class="btn-login">Login</a>
                 <a href="cadastro.html" class="btn-cadastro">Cadastrar</a>
             </div>
+
+            <div class="header-user" id="headerUser">
+                <!-- Preenchido via JavaScript -->
+            </div>
         </div>
     </header>
 
-    <!-- Conteúdo Principal do Chat -->
     <main class="chat-main">
-        <div class="chat-container">
-            <!-- Lista de Conversas -->
-            <aside class="conversas-sidebar">
-                <div class="sidebar-header">
-                    <h2>Conversas</h2>
-                    <button class="btn-nova-conversa" id="novaConversa">+ Nova</button>
-                </div>
-                
-                <div class="conversas-list">
-                    <div class="conversa-item active" data-conversa="1">
-                        <div class="conversa-avatar">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTorvMnItp0jzLRv7mJre8EBg4aGT3kTVdq3A&s" alt="Maria">
-                        </div>
-                        <div class="conversa-info">
-                            <div class="conversa-header">
-                                <h3>Maria Silva</h3>
-                                <span class="conversa-time">10:30</span>
-                            </div>
-                            <p class="conversa-preview">Olá! Vamos combinar os detalhes da viagem?</p>
-                        </div>
-                    </div>
-
-                    <div class="conversa-item" data-conversa="2">
-                        <div class="conversa-avatar">
-                            <img src="https://static.vecteezy.com/ti/fotos-gratis/t2/3492221-retrato-de-alegre-bonito-homem-de-camisa-branca-olhando-para-camera-sentindo-alegre-como-se-tendo-uma-ideia-interessante-estudio-isolada-no-fundo-bege-gratis-foto.JPG" alt="João">
-                        </div>
-                        <div class="conversa-info">
-                            <div class="conversa-header">
-                                <h3>João Santos</h3>
-                                <span class="conversa-time">Ontem</span>
-                            </div>
-                            <p class="conversa-preview">Encontrei uma promoção ótima!</p>
-                        </div>
-                    </div>
-
-                    <div class="conversa-item" data-conversa="3">
-                        <div class="conversa-avatar">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Lf6D4zsIMgNY8l9QhopxgmQv59cX1YaKhQ&s" alt="Ana">
-                        </div>
-                        <div class="conversa-info">
-                            <div class="conversa-header">
-                                <h3>Ana Oliveira</h3>
-                                <span class="conversa-time">Seg</span>
-                            </div>
-                            <p class="conversa-preview">Confirmado! Nos vemos no aeroporto</p>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- Área do Chat Ativo -->
-            <section class="chat-area">
-                <div class="chat-header">
-                    <div class="chat-user-info">
-                        <div class="user-avatar">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTorvMnItp0jzLRv7mJre8EBg4aGT3kTVdq3A&s" alt="Maria">
-                        </div>
-                        <div class="user-details">
-                            <h3>Maria Silva</h3>
-                            <span class="user-status">Online</span>
-                        </div>
-                    </div>
-                    <div class="chat-actions">
-                        <button class="btn-action" title="Chamada de vídeo">📹</button>
-                        <button class="btn-action" title="Informações">ℹ️</button>
-                    </div>
-                </div>
-
-                <div class="chat-messages" id="chatMessages">
-                    <!-- Mensagens serão inseridas aqui via JavaScript -->
-                </div>
-
-                <div class="chat-input-area">
-                    <div class="input-actions">
-                        <button class="btn-attach" title="Anexar arquivo">📎</button>
-                        <button class="btn-emoji" title="Emojis">😊</button>
-                        <button class="btn-location" title="Compartilhar localização">📍</button>
-                    </div>
-                    <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem...">
-                    <button class="btn-send" id="btnSend">➤</button>
-                </div>
-            </section>
+        <div class="chat-container" id="chatContainer">
+            <!-- Conteúdo carregado dinamicamente -->
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>© 2025 Caroneiro. Todos os direitos reservados.</p>
     </footer>

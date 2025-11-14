@@ -1,24 +1,75 @@
+// Sistema de Gerenciamento de Perfil
 class PerfilSystem {
     constructor() {
-        this.authSystem = window.authSystem;
+        this.authSystem = this.getAuthSystem();
         this.init();
     }
 
+    getAuthSystem() {
+        // Tenta acessar o authSystem global ou cria um simples local
+        if (window.authSystem) {
+            return window.authSystem;
+        }
+        
+        // Fallback local
+        return {
+            isLoggedIn: () => {
+                const user = localStorage.getItem('caroneiro_currentUser');
+                return user !== null;
+            },
+            getCurrentUser: () => {
+                const user = localStorage.getItem('caroneiro_currentUser');
+                return user ? JSON.parse(user) : null;
+            },
+            logout: () => {
+                localStorage.removeItem('caroneiro_currentUser');
+                window.location.href = 'login.html';
+            }
+        };
+    }
+
     init() {
-        if (!this.authSystem.checkAuthentication()) return;
+        this.updateHeader();
         this.carregarPerfil();
-        this.setupEventListeners();
+    }
+
+    updateHeader() {
+        const headerUser = document.getElementById('headerUser');
+        if (!headerUser) return;
+
+        if (this.authSystem.isLoggedIn()) {
+            const user = this.authSystem.getCurrentUser();
+            headerUser.innerHTML = `
+                <div class="user-menu">
+                    <div class="user-info">
+                        <span class="user-name">Olá, ${user.nome.split(' ')[0]}</span>
+                        <span class="user-email">${user.email}</span>
+                    </div>
+                    <div class="user-actions">
+                        <a href="perfil.html" class="btn-profile">👤 Perfil</a>
+                        <button class="btn-logout" onclick="perfilSystem.logout()">🚪 Sair</button>
+                    </div>
+                </div>
+            `;
+        } else {
+            headerUser.innerHTML = `
+                <div class="header-buttons">
+                    <a href="login.html" class="btn-login">Login</a>
+                    <a href="cadastro.html" class="btn-cadastro">Cadastrar</a>
+                </div>
+            `;
+        }
     }
 
     carregarPerfil() {
-        const user = this.authSystem.getCurrentUser();
         const perfilContent = document.getElementById('perfilContent');
         
-        if (!user) {
+        if (!this.authSystem.isLoggedIn()) {
             perfilContent.innerHTML = this.getPerfilVazio();
             return;
         }
 
+        const user = this.authSystem.getCurrentUser();
         perfilContent.innerHTML = this.getPerfilCompleto(user);
     }
 
@@ -40,15 +91,14 @@ class PerfilSystem {
 
     getPerfilCompleto(user) {
         return `
-            <!-- Cabeçalho do Perfil -->
             <section class="perfil-header">
                 <div class="perfil-foto">
-                    <img src="${user.foto}" alt="${user.nome}">
-                    <button class="btn-editar-foto">✏️</button>
+                    <img src="${user.foto || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80'}" alt="${user.nome}">
+                    <button class="btn-editar-foto" onclick="perfilSystem.editarFoto()">✏️</button>
                 </div>
                 <div class="perfil-info">
                     <h1>${user.nome}</h1>
-                    <p class="perfil-localizacao">📍 ${user.cidade}</p>
+                    <p class="perfil-localizacao">📍 ${user.cidade || 'Cidade não informada'}</p>
                     <div class="perfil-stats">
                         <div class="stat">
                             <span class="stat-number">${user.viagens ? user.viagens.length : 0}</span>
@@ -72,7 +122,6 @@ class PerfilSystem {
                 </div>
             </section>
 
-            <!-- Biografia -->
             <section class="perfil-bio">
                 <h2>Sobre Mim</h2>
                 <div class="bio-content">
@@ -87,7 +136,6 @@ class PerfilSystem {
                 </div>
             </section>
 
-            <!-- Informações de Contato -->
             <section class="perfil-contato">
                 <h2>Informações de Contato</h2>
                 <div class="contato-info">
@@ -97,7 +145,7 @@ class PerfilSystem {
                     </div>
                     <div class="contato-item">
                         <span class="contato-label">📞 Telefone:</span>
-                        <span class="contato-value">${user.telefone}</span>
+                        <span class="contato-value">${user.telefone || 'Não informado'}</span>
                     </div>
                     <div class="contato-item">
                         <span class="contato-label">📅 Membro desde:</span>
@@ -106,7 +154,6 @@ class PerfilSystem {
                 </div>
             </section>
 
-            <!-- Minhas Viagens -->
             <section class="viagens-section">
                 <div class="section-header">
                     <h2>Minhas Viagens</h2>
@@ -163,8 +210,8 @@ class PerfilSystem {
         `).join('');
     }
 
-    setupEventListeners() {
-        // Event listeners para funcionalidades do perfil
+    editarFoto() {
+        alert('Funcionalidade de edição de foto será implementada em breve!');
     }
 
     editarPerfil() {
@@ -174,16 +221,29 @@ class PerfilSystem {
     adicionarViagem() {
         const destino = prompt('Para onde você viajou?');
         if (destino) {
+            const user = this.authSystem.getCurrentUser();
             const viagem = {
                 destino: destino,
-                descricao: 'Viagem maravilhosa!'
+                descricao: 'Viagem maravilhosa!',
+                data: new Date().toISOString(),
+                foto: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80'
             };
             
-            if (this.authSystem.addViagem(this.authSystem.currentUser.id, viagem)) {
-                this.carregarPerfil();
-                alert('Viagem adicionada com sucesso!');
-            }
+            // Atualizar localmente
+            if (!user.viagens) user.viagens = [];
+            user.viagens.push(viagem);
+            
+            // Salvar no localStorage
+            localStorage.setItem('caroneiro_currentUser', JSON.stringify(user));
+            
+            // Recarregar perfil
+            this.carregarPerfil();
+            alert('Viagem adicionada com sucesso!');
         }
+    }
+
+    logout() {
+        this.authSystem.logout();
     }
 }
 
